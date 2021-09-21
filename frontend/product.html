@@ -13,6 +13,12 @@
     <meta property="og:url" content="https://rossignol-h.github.io/" />
     <meta property="og:image" content="http://example.com/image.jpg" />
     <meta property="og:description" content="E-commerce" />
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/svg"
+      href="./public/images/logo/favicon-orinoco.svg"
+    />
 
     <!-- Customize css -->
     <link rel="stylesheet" href="./public/css/main.css" />
@@ -23,28 +29,10 @@
       href="https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <!-- favicon -->
-    <link
-      rel="shortcut icon"
-      type="image/svg"
-      href="./public/images/logo/favicon-orinoco.svg"
-    />
-    <!-- Google font Qwigley-->
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Qwigley&display=swap");
-    </style>
 
-    <!-- Optimized title-->
     <title>Orinoco</title>
   </head>
-  <body>
-    <!--Spinner 
-  
-<div class="d-flex justify-content-center loading__screen">
-        <div class="loading__spinner">
-            <img src="./public/images/logo/orinoco-spin.svg" alt="Spinner Orinoco"/>
-        </div>
-    </div>-->
+  <body class="body">
     <!--Menu-->
     <nav
       class="navbar navbar-expand-lg py-2 sticky-top"
@@ -93,15 +81,14 @@
           <!--pour que le menu hamburger fonctionne-->
           <ul class="navbar-nav ms-auto px-2 breadcrumb">
             <!--ms-auto pour ke la liste se place a droite-->
-            <li class="breadcrumb-item active" aria-current="page">
-              <a href="#">Accueil</a>
+            <li class="breadcrumb-item" aria-current="page">
+              <a href="index.html">Accueil</a>
             </li>
-            <li class="breadcrumb-item">
-              <a href="#produits">Nos produits</a>
+            <li class="breadcrumb-item active">
+              <a href="index.html#produits">Nos produits</a>
             </li>
-            <li class="cart-btn breadcrumb-item" aria-current="page">
+            <li class="breadcrumb-item" aria-current="page">
               <a href="cart.html">Panier</a>
-              <div id="html-number"></div>
             </li>
             <li class="breadcrumb-item">
               <a href="#">Contact</a>
@@ -111,33 +98,64 @@
       </div>
     </nav>
 
-    <!-- Header hero -->
-    <header class="hero d-flex align-items-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-7">
-            <h1>Orinoco</h1>
-            <blockquote class="blockquote">
-              <p class="text-white">Une image vaut mieux que mille mots.</p>
-            </blockquote>
-          </div>
-        </div>
-      </div>
-    </header>
-
     <!-- shop products section -->
-    <main class="main text-center p-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <h2 class="h2 p-4" id="produits">Nos produits</h2>
-            <div
-              class="row row-cols-1 row-cols-md-3 g-4"
-              id="products-container"
-            ></div>
+
+    <main class="container w-md-95 mt-5 mb-5 pt-5 pb-4">
+      <div class="row d-flex justify-items-center">
+        <div class="col-md-8" id="product-container">
+          <!--card product -->
+        </div>
+
+        <!--card options -->
+        <div class="col-md-4 col-sm-12 mt-sm-4 mt-md-0">
+          <div
+            class="card bg-dark text-light text-center"
+            id="option-container"
+          >
+            <div class="card-body p-4">
+              <img
+                class="card-img pb-5"
+                src="./public/images/logo/orinoco-logo.svg"
+                alt="Appareil photo"
+              />
+              <label class="row mb-3">Selectionnez une lentille</label>
+              <select class="row form-select" id="lenses-choice"></select>
+              <select class="row form-select" id="quantity-choice">
+                <option value="">Quantité</option>
+              </select>
+            </div>
           </div>
         </div>
+
+        <button
+          type="submit"
+          class="
+            d-flex
+            justify-content-center
+            cart-btn
+            buttons
+            mx-auto
+            btn
+            bg-dark
+            px-2
+            mt-4
+            mb-5
+          "
+          id="btn-add-cart"
+        >
+          <img
+            class="icon-md cart-icon"
+            src="./public/images/icons/cart.svg"
+            alt="caddie de courses"
+            aria-hidden="true"
+            height="24"
+            width="24"
+          />
+          Ajouter au panier
+        </button>
       </div>
+
+      <!-- add to cart  -->
     </main>
 
     <!--Footer-->
@@ -201,9 +219,9 @@
       </div>
     </footer>
 
-    <!-- Bootstrap JS -->
+    <!-- Popper and Bootstrap JS -->
     <script src="./libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- JS -->
-    <script src="./index.js"></script>
+    <!-- app JS -->
+    <script src="./product.js"></script>
   </body>
 </html>
