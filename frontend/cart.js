@@ -53,7 +53,7 @@ storageProducts.forEach((product, i) => {
       let sum = 0
       for (i = 0; i < priceContent.length; i++) {
         sum += parseInt(priceContent[i].innerHTML)
-        totalContent.innerHTML = sum
+        totalContent.innerHTML = sum.toLocaleString("fr-FR")
       }
       //------------------------------------------ Update cart in local storage ---
 
@@ -88,15 +88,16 @@ storageProducts.forEach((product, i) => {
           <input class="form-control" name="prenom" id="prenom" type="text"
             placeholder="Emmanuel"
             required
-            pattern="[A-Za-z-éè ]{2,25}"
-            title="Seulement des lettres merci" required>
+            pattern="[A-zÀ-ÿ'\s-]{2,25}"
+            title="Seulement des lettres merci">
         </div>
         <div class="nom form-group col-auto">
           <label for="nom">Nom: </label>
           <input class="form-control" name="nom" id="nom" type="text"
             placeholder="Macron"
-            pattern="[A-Za-z-éè ]{2,25}"
-            title="Seulement des lettres merci" required>
+            required
+            pattern="[A-zÀ-ÿ'\s-]{2,25}"
+            title="Seulement des lettres merci">
         </div>
       </div>
       <div class="adresse form-group mt-4">
@@ -110,7 +111,7 @@ storageProducts.forEach((product, i) => {
           <label for="ville">Ville: </label>
           <input class="form-control" name="ville" id="ville" type="text"
             placeholder="Paris"
-            pattern="[A-Za-z-éè ]{1,25}"
+            pattern="[A-zÀ-ÿ'\s-]{1,25}"
             title="Seulement des lettres merci" required>
         </div>
         <div class="form-group col-md-6">
