@@ -12,12 +12,16 @@ async function getProductApi() {
     const data = await response.json()
     return data
   } catch (error) {
+    document.getElementById(
+      "catch-error"
+    ).innerHTML += `Nous sommes désolés une erreur s'est produite, veuillez rafraichir la page`
     console.error(error)
   }
 }
 
 //-------------------------------------------------- show product section----------
 getProductApi().then((product) => {
+  product.price = product.price / 100
   productContainer.innerHTML += `
 <div class="d-flex card bg-dark" id="card-product">
     <div class="row">
@@ -29,14 +33,15 @@ getProductApi().then((product) => {
           <div class="card-body text-center">
             <h1 class="card-title pb-4">${product.name}</h1>
             <p class="card-text">${product.description}</p>
-            <p class="card-text lead">${product.price.toFixed(2) / 100} €</p>
+            <p class="card-text lead">${product.price.toLocaleString(
+              "fr-FR"
+            )} €</p>
           </div>
         </div>          
     </div> 
 </div>
 `
   //-------------------------------------------- lenses choice --------------------
-
   for (let i = 0; i < product.lenses.length; i++) {
     let lenses = product.lenses[i]
     lensesChoice.innerHTML +=
@@ -63,9 +68,13 @@ getProductApi().then((product) => {
         name: product.name,
         image: product.imageUrl,
         lenses: lensesChoice.value,
-        price: product.price / 100,
+        price: product.price.toLocaleString("fr-FR", {
+          style: "currency",
+          currency: "EUR",
+          maximumFractionDigits: 0,
+        }),
         quantity: quantityChoice.value,
-        total: (product.price * quantityChoice.value) / 100,
+        total: quantityChoice.value * product.price,
       }
 
       //---------------------------------- Section to deal with local storage -----
@@ -94,7 +103,7 @@ getProductApi().then((product) => {
       }
     } else {
       // for quantity check
-      window.alert("Merci de selectionner une quantité !")
+      window.alert("Merci de sélectionner une quantité !")
     }
   })
 })

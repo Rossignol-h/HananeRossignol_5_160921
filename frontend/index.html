@@ -24,16 +24,12 @@
       rel="stylesheet"
     />
     <!-- favicon -->
-    <link
-      rel="shortcut icon"
-      type="image/svg"
-      href="./public/images/logo/favicon-orinoco.svg"
-    />
+    <link rel="shortcut icon" type="image/svg" href="./public/images/logo/favicon-orinoco.svg" />
     <!-- Google font Qwigley-->
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Qwigley&display=swap");
-    </style>
-
+    @import url('https://fonts.googleapis.com/css2?family=Qwigley&display=swap');
+      </style> 
+       
     <!-- Optimized title-->
     <title>Orinoco</title>
   </head>
@@ -46,10 +42,7 @@
         </div>
     </div>-->
     <!--Menu-->
-    <nav
-      class="navbar navbar-expand-lg py-2 sticky-top"
-      aria-label="breadcrumb"
-    >
+    <nav class="navbar navbar-expand-lg py-2 sticky-top" aria-label="breadcrumb">
       <div class="container">
         <!--Logo-->
         <img
@@ -90,18 +83,16 @@
 
         <!--Navigation list-->
         <div class="collapse navbar-collapse" id="navmenu">
-          <!--pour que le menu hamburger fonctionne-->
+          <!--for the hamburger menu-->
           <ul class="navbar-nav ms-auto px-2 breadcrumb">
-            <!--ms-auto pour ke la liste se place a droite-->
             <li class="breadcrumb-item active" aria-current="page">
               <a href="#">Accueil</a>
             </li>
             <li class="breadcrumb-item">
               <a href="#produits">Nos produits</a>
             </li>
-            <li class="cart-btn breadcrumb-item" aria-current="page">
+            <li class="breadcrumb-item" aria-current="page">
               <a href="cart.html">Panier</a>
-              <div id="html-number"></div>
             </li>
             <li class="breadcrumb-item">
               <a href="#">Contact</a>
@@ -126,16 +117,15 @@
     </header>
 
     <!-- shop products section -->
-    <main class="main text-center p-5">
+    <main class="main text-center p-2 mb-5">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <h2 class="h2 p-4" id="produits">Nos produits</h2>
-            <div
-              class="row row-cols-1 row-cols-md-3 g-4"
-              id="products-container"
-            ></div>
-          </div>
+            <div class=" row row-cols-1 row-cols-md-3 g-4" id="products-container">
+              <!--card product JS -->
+            </div>
+            <p class="pt-2" id="catch-error"></p>
         </div>
       </div>
     </main>
@@ -144,8 +134,9 @@
     <footer class="text-center text-white">
       <div class="container">
         <h6 class="h6 pt-4">Suivez-nous sur nos réseaux sociaux</h6>
-        <div class="mb-2">
-          <!--Facebook -->
+        <section class="mb-2">
+        
+           <!--Facebook -->
           <a
             class="btn btn-floating m-1"
             role="button"
@@ -161,7 +152,7 @@
               height="24"
               width="24"
           /></a>
-          <!--Instagram-->
+           <!--Instagram-->
           <a
             class="btn btn-floating m-1"
             href="https://www.instagram.com/"
@@ -176,7 +167,7 @@
               height="24"
               width="24"
           /></a>
-          <!--Twitter-->
+           <!--Twitter--> 
           <a
             class="btn btn-floating m-1"
             role="button"
@@ -192,10 +183,10 @@
               height="24"
               width="24"
           /></a>
-        </div>
+        </section> 
       </div>
-
-      <!--Copyright -->
+      
+       <!--Copyright -->
       <div class="Copyright text-center p-3">
         © 2021 Copyright Hanane Rossignol
       </div>

@@ -170,6 +170,7 @@ storageProducts.forEach((product, i) => {
     sendToApi().then((orderData) => {
       const orderId = orderData.orderId
       const order = { orderId, sum, contact }
+      localStorage.clear()
       localStorage.setItem("orderFinal", JSON.stringify(order))
 
       const okConfirm = localStorage.getItem("orderFinal")

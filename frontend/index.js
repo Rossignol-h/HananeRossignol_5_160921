@@ -5,6 +5,9 @@ async function getApiProducts() {
     const data = await response.json()
     return data
   } catch (error) {
+    document.getElementById(
+      "catch-error"
+    ).innerHTML += `Nous sommes désolés une erreur s'est produite, veuillez rafraichir la page`
     console.error(error)
   }
 }
@@ -12,23 +15,21 @@ async function getApiProducts() {
 const productsContainer = document.getElementById("products-container")
 getApiProducts().then((data) => {
   data.forEach((product) => {
+    product.price = product.price / 100
     productsContainer.innerHTML += `<div class="col">
-          <div id="card-index" class="product card border-0 w-100 h-100">
-              <img
-                src=${product.imageUrl}
-                class="product-img card-img-top"
-                alt="appareil photo"
-              />
-          <div class="card-body">
-              <h5 class="card-title">${product.name}</h5>
-              <p class="price card-text">${product.price.toFixed(2) / 100} €</p>
-              <a href="product.html?id=${product._id}">
-                <button class="btn-detail btn-lg" data-id=${product._id}>
-                Détails
-                </button>
-              </a>
-          </div>
-        </div>
-      </div>`
+    <div id="index-card" class="product card border-0 w-100 h-100">
+      <img src=${product.imageUrl} class="index-img card-img-top"
+        alt="appareil photo"
+      />
+    <div class="card-body">
+      <h5 class="card-title">${product.name}</h5>
+      <p class="price card-text">${product.price.toLocaleString("fr-FR")} €</p>
+      <a href="product.html?id=${product._id}">
+      <button class="btn-detail btn-lg" data-id=${product._id}>
+        Détails
+      </button></a>
+    </div>
+  </div>
+</div>`
   })
 })

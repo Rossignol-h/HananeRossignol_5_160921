@@ -32,7 +32,7 @@
 
     <title>Orinoco</title>
   </head>
-  <body class="body">
+  <body class="body body-bg">
     <!--Menu-->
     <nav
       class="navbar navbar-expand-lg py-2 sticky-top"
@@ -99,26 +99,24 @@
     </nav>
 
     <!-- shop products section -->
-
-    <main class="container w-md-95 mt-5 mb-5 pt-5 pb-4">
-      <div class="row d-flex justify-items-center">
-        <div class="col-md-8" id="product-container">
-          <!--card product -->
-        </div>
+    <main class="container my-5">
+      <div class="row gx-0 d-flex justify-items-center">
+        <!--card product -->
+        <div class="col-md-8" id="product-container"></div>
 
         <!--card options -->
-        <div class="col-md-4 col-sm-12 mt-sm-4 mt-md-0">
+        <div class="col-md-4 col-sm-12">
           <div
             class="card bg-dark text-light text-center"
             id="option-container"
           >
-            <div class="card-body p-4">
+            <div class="card-body">
               <img
                 class="card-img pb-5"
                 src="./public/images/logo/orinoco-logo.svg"
                 alt="Appareil photo"
               />
-              <label class="row mb-3">Selectionnez une lentille</label>
+              <label class="row mb-3">Sélectionnez une lentille</label>
               <select class="row form-select" id="lenses-choice"></select>
               <select class="row form-select" id="quantity-choice">
                 <option value="">Quantité</option>
@@ -126,21 +124,10 @@
             </div>
           </div>
         </div>
-
+        <!--add to cart btn -->
         <button
           type="submit"
-          class="
-            d-flex
-            justify-content-center
-            cart-btn
-            buttons
-            mx-auto
-            btn
-            bg-dark
-            px-2
-            mt-4
-            mb-5
-          "
+          class="justify-content-center btn bg-dark"
           id="btn-add-cart"
         >
           <img
@@ -154,8 +141,6 @@
           Ajouter au panier
         </button>
       </div>
-
-      <!-- add to cart  -->
     </main>
 
     <!--Footer-->
