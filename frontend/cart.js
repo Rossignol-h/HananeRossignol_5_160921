@@ -116,7 +116,7 @@ storageProducts.forEach((product, i) => {
         </div>
         <div class="form-group col-md-6">
           <label for="email">E-mail : </label>
-          <input class="form-control" name="email" id="email" type="text"
+          <input class="form-control" name="email" id="email" type="email"
             placeholder="e.macron@gmail.com"
             pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{3,}$"
             title="Votre email n'est pas valide" required>
